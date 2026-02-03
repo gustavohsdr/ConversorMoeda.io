@@ -1,0 +1,21 @@
+/* Cores primárias/secundárias
+
+Cores de fundo
+
+Cores de texto
+
+Estados (error, success, warning) */
+
+:root {
+  --color-text-primary: #777777;
+  --color-text-secondary: #ffffff;
+  --color-text-tertiary: #eccc48;
+  --color-text-quartenary: #7f7f7f;
+
+  --color-bg-primary: #f0d6795c;
+  --color-bg-secondary: #c8d15a;
+  --color-bg-tertiary: #222222;
+  --color-bg-quartenary: #f2f2f280;
+
+  --color-btn-primary: #edcc48;
+}

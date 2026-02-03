@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="notificacao" id="notificacao"></div>
+    <div class="stack stack--p-xl">
+      <div class="badge">
+        <span class="material-symbols-outlined"> trending_up </span>
+        <span>Taxas em Tempo Real</span>
+      </div>
+
+      <div class="header__content stack--p-sm">
+        <h1 class="header__title">Conversor de Moedas</h1>
+        <p class="header__subtitle">
+          Converta entre diferentes moedas de forma rápida e precisa
+        </p>
+      </div>
+      <div>
+        <div class="converter-layout stack stack--p-xl">
+          <section class="converter-layout__input shadow-lg">
+            <div class="converter-panel stack--p-2xs">
+              <p class="converter-panel__title">Conversor de Moedas</p>
+              <p class="converter-panel__subtitle">
+                Digite o valor e escolha as moedas
+              </p>
+            </div>
+
+            <div class="converter-painel__layout stack stack--p-sm">
+              <div class="stack stack--g-sm">
+                <label for="valor">Valor</label>
+                <input
+                  type="number"
+                  id="valor"
+                  placeholder="0.00"
+                  class="stack--p-sm converter-panel__input"
+                />
+                <p class="converter-panel__description" id="nomeMoedaOrigem">
+                  -
+                </p>
+              </div>
+              <div class="stack stack--g-sm">
+                <label for="origem"> Origem </label>
+                <select
+                  class="stack--p-sm converter-panel__origem"
+                  name="origem"
+                  id="origem"
+                >
+                  <option value="BRL">BRL</option>
+                  <option value="USD">USD</option>
+                </select>
+              </div>
+            </div>
+            <div class="converter-icon stack stack--p-sm">
+              <button
+                type="button"
+                class="converter-icon__sync bnt-swap"
+                id="inverter"
+              >
+                <span class="material-symbols-outlined"> sync_alt </span>
+              </button>
+            </div>
+
+            <div class="stack stack--p-sm stack--g-sm">
+              <label for="destino"> Destino </label>
+              <select
+                class="stack--p-sm converter-panel__origem"
+                name="destino"
+                id="destino"
+              >
+                <option value="USD">USD</option>
+                <option value="BRL">BRL</option>
+              </select>
+              <p class="converter-panel__description" id="nomeMoedaDestino">
+                -
+              </p>
+            </div>
+
+            <div class="stack stack--p-sm button--stack">
+              <div class="erro-mensagem" id="erroMensagem"></div>
+              <div class="card-resultado" id="resultado">
+                <div class="resultado-container">
+                  <div class="resultado-titulo">Resultado da Conversão</div>
+                  <div class="resultado-valor" id="resultadoValor"></div>
+                  <div class="resultado-taxa" id="resultadoTaxa"></div>
+                </div>
+              </div>
+
+              <button
+                class="stack--p-sm btn-primary"
+                id="converter"
+                type="button"
+              >
+                Converter Agora
+              </button>
+            </div>
+          </section>
+
+          <section class="converter-layout__history">
+            <div class="history-panel stack--p-2xs">
+              <p class="history-panel__title">Histórico</p>
+            </div>
+            <div class="history-container">
+              <div id="historico"></div>
+              <div
+                class="history-panel__void stack stack--g-sm"
+                id="mensagemVazia"
+              >
+                <span class="material-symbols-outlined icon-history">
+                  trending_up
+                </span>
+                <p>Nenhuma conversão ainda</p>
+                <p>Suas conversões aparecerão aqui</p>
+              </div>
+            </div>
+          </section>
+          <section class="converter-layout__rates">
+            <div class="rates-panel stack--p-2xs">
+              <p class="rates-panel__title">Taxas de Câmbio</p>
+            </div>
+            <div class="rates-container">
+              <div class="rate-item">
+                <span class="rate-item__origem">us USD</span>
+                <span class="material-symbols-outlined rate-item__arrow"
+                  >arrow_forward</span
+                >
+                <span class="rate-item__destino">BRL</span>
+                <span class="rate-item__valor">5.00</span>
+              </div>
+              <div class="rate-item">
+                <span class="rate-item__origem">eu EUR</span>
+                <span class="material-symbols-outlined rate-item__arrow"
+                  >arrow_forward</span
+                >
+                <span class="rate-item__destino">BRL</span>
+                <span class="rate-item__valor">5.45</span>
+              </div>
+              <div class="rate-item">
+                <span class="rate-item__origem">us USD</span>
+                <span class="material-symbols-outlined rate-item__arrow"
+                  >arrow_forward</span
+                >
+                <span class="rate-item__destino">EUR</span>
+                <span class="rate-item__valor">0.92</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./script/main.js" defer></script>
+  </body>
+</html>
